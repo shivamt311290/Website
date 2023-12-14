@@ -2,35 +2,43 @@
 <html>
 <head>
     <title>SAPUI5 Integration</title>
-    <script
-      src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
-      data-sap-ui-libs="sap.m">
+    <script src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js" data-sap-ui-libs="sap.m"></script>
+    
+    <!-- Embedding the XML View -->
+    <script id="view" type="text/xml">
+        <mvc:View controllerName="MyController" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+            <VBox>
+                <Input id="inputField" placeholder="Enter something..."/>
+                <Button text="Click me" press="echoInput"/>
+            </VBox>
+        </mvc:View>
     </script>
 
+    <!-- Controller Code -->
     <script>
+        sap.ui.define([
+            "sap/ui/core/mvc/Controller"
+        ], function (Controller) {
+            "use strict";
+            return Controller.extend("MyController", {
+                echoInput: function () {
+                    var input = this.byId("inputField");
+                    alert(input.getValue());
+                }
+            });
+        });
+        
         // SAPUI5 Core Initialization
         sap.ui.getCore().attachInit(function () {
-            // Create a simple Input and Button inside a Vertical Layout
-            new sap.m.VBox({
-                items: [
-                    new sap.m.Input("inputField", { placeholder: "Enter something..."}),
-                    new sap.m.Button("button", { text: "Click me", press: echoInput })
-                ]
+            // Create a View
+            sap.ui.xmlview({
+                viewContent: jQuery('#view').html()
             }).placeAt("content");
         });
-
-        function goToPage2() {
-            window.location.href = 'page2.html';
-        }
-
-        function echoInput(){
-            var input = sap.ui.getCore().byId("inputField");
-            alert(input.getValue());
-        }
     </script>
 </head>
 <body>
     <h1 style="color:orange;">Welcome to SAPUI5 Page</h1>
-    <div id="content"></div> <!-- SAPUI5 content will be placed here -->    
+    <div id="content"></div> <!-- SAPUI5 content will be placed here -->
 </body>
 </html>
