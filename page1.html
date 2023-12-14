@@ -8,8 +8,11 @@
     <script id="view" type="text/xml">
         <mvc:View controllerName="MyController" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
             <VBox>
-                <Input id="inputField1" placeholder="Enter first value..." value="{/field1}"/>
-                <Input id="inputField2" placeholder="Enter second value..." value="{/field2}"/>
+                <Input id="inputField1" value="{/field1}"/>
+                <Input id="inputField2" value="{/field2}"/>
+                <Label text="========================"/>
+                <Input id="inputField3" value="{/field1}"/>
+                <Input id="inputField4" value="{/field2}"/>                
                 <Button text="Click me" press="echoInput"/>
             </VBox>
         </mvc:View>
