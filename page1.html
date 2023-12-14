@@ -8,7 +8,8 @@
     <script id="view" type="text/xml">
         <mvc:View controllerName="MyController" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
             <VBox>
-                <Input id="inputField" placeholder="Enter something..."/>
+                <Input id="inputField1" placeholder="Enter first value..." value="{/field1}"/>
+                <Input id="inputField2" placeholder="Enter second value..." value="{/field2}"/>
                 <Button text="Click me" press="echoInput"/>
             </VBox>
         </mvc:View>
@@ -17,13 +18,23 @@
     <!-- Controller Code -->
     <script>
         sap.ui.define([
-            "sap/ui/core/mvc/Controller"
-        ], function (Controller) {
+            "sap/ui/core/mvc/Controller",
+            "sap/ui/model/json/JSONModel"
+        ], function (Controller, JSONModel) {
             "use strict";
             return Controller.extend("MyController", {
+                onInit: function () {
+                    var oData = {
+                        field1: "",
+                        field2: ""
+                    };
+                    var oModel = new JSONModel(oData);
+                    this.getView().setModel(oModel);
+                },
                 echoInput: function () {
-                    var input = this.byId("inputField");
-                    alert(input.getValue());
+                    var input1 = this.byId("inputField1").getValue();
+                    var input2 = this.byId("inputField2").getValue();
+                    alert("Values: " + input1 + ", " + input2 );
                 }
             });
         });
