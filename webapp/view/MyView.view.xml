@@ -1,4 +1,4 @@
-<mvc:View controllerName="MyController" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+<mvc:View controllerName="MyApp.controller.MyController" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
     <VBox>
         <Input id="inputField1" value="{/field1}"/>
         <Input id="inputField2" value="{/field2}"/>
