@@ -6,7 +6,7 @@ sap.ui.define([
     return Controller.extend("MyController", {
         onInit: function () {
             var oData = {
-                field1: "",
+                field1: "Buhler",
                 field2: ""
             };
             var oModel = new JSONModel(oData);

@@ -13,14 +13,11 @@
     <div id="content"></div> <!-- SAPUI5 content will be placed here -->
     <script>
         sap.ui.getCore().attachInit(function () {
-            // Instantiate the View
-            var oView = sap.ui.view({
-                viewName: "MyApp.view.MyView",
-                type: sap.ui.core.mvc.ViewType.XML
-            });
+            // Instantiate the ComponentContainer
+            new sap.ui.core.ComponentContainer({
+                name: "MyApp"
+            }).placeAt("content");
 
-            // Place the View in the "content" div
-            oView.placeAt("content");
         });
     </script>
 </body>
