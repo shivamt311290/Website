@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SAPUI5 Integration</title>
+    <script src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+            data-sap-ui-theme="sap_belize"
+            data-sap-ui-libs="sap.m"
+            data-sap-ui-resourceroots='{"MyApp": "./"}'>
+    </script>
+</head>
+<body>
+    <h1 style="color:orange;">Welcome to SAPUI5 Page</h1>
+    <div id="content"></div> <!-- SAPUI5 content will be placed here -->
+    <script>
+        sap.ui.getCore().attachInit(function () {
+            // Instantiate the View
+            var oView = sap.ui.view({
+                viewName: "MyApp.view.MyView",
+                type: sap.ui.core.mvc.ViewType.XML
+            });
+
+            // Place the View in the "content" div
+            oView.placeAt("content");
+        });
+    </script>
+</body>
+</html>
