@@ -1,5 +1,5 @@
 # ui5-training
 
-### Introduce Select button
-### Introduce aggregation (for Select)
-### Introduce aggregation binding
+### Resource Binding
+### One-Time binding
+### Create i18n model
