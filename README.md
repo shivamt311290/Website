@@ -1,4 +1,5 @@
 # ui5-training
 
-### Select Control introduced
-### Aggregation Binding
+### Introduce Select button
+### Introduce aggregation (for Select)
+### Introduce aggregation binding
