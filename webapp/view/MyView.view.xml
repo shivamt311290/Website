@@ -9,11 +9,11 @@
 				<Label text="Value 2" />
 				<Input id="value2" value="{/field2}" />
 				<Label text="Operator" />
-				<Input value="{/operator}"/>
+				<Select selectedKey="{/operator}"/>
 				<Label text="Output" />
 				<Text text="{/output}"/>
-                <Button text="Calculate" press=".calculate"/>
-			</f:content>
+			</f:content>	
 		</f:SimpleForm>
+        <Button text="Calculate" press=".calculate"/>				
     </VBox>
 </mvc:View>
