@@ -12,10 +12,22 @@ sap.ui.define([
             var oModel = new JSONModel(oData);
             this.getView().setModel(oModel);
         },
-        echoInput: function () {
-            var input1 = this.byId("inputField1").getValue();
-            var input2 = this.byId("inputField2").getValue();
-            alert("Values: " + input1 + ", " + input2 );
+        calculate: function () {
+            const input1 = this.getView().getModel().getData().field1;
+            const input2 = this.getView().getModel().getData().field2;
+            const operator = this.getView().getModel().getData().operator;
+
+            let output = 0;
+            if (operator === "+"){
+                output = parseInt(input1) + parseInt(input2);
+            }else if (operator === "*"){
+                output = parseInt(input1) * parseInt(input2);
+            }
+
+            const model = this.getView().getModel();
+            let data = model.getData();
+            data.output = output;
+            model.setData(data);
         }
     });
 });

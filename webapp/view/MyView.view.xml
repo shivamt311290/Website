@@ -1,7 +1,19 @@
-<mvc:View controllerName="MyApp.controller.MyController" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+<mvc:View controllerName="MyApp.controller.MyController" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form">
     <VBox>
-        <Input id="inputField1" value="{/field1}"/>
-        <Input id="inputField2" value="{/field2}"/>              
-        <Button text="Click me" press="echoInput"/>
+		<f:SimpleForm
+			layout="ResponsiveGridLayout"
+			title="Demo" >
+			<f:content>
+				<Label text="Value 1" />
+				<Input id="value1" value="{/field1}" />
+				<Label text="Value 2" />
+				<Input id="value2" value="{/field2}" />
+				<Label text="Operator" />
+				<Input value="{/operator}"/>
+				<Label text="Output" />
+				<Text text="{/output}"/>
+                <Button text="Calculate" press=".calculate"/>
+			</f:content>
+		</f:SimpleForm>
     </VBox>
 </mvc:View>
