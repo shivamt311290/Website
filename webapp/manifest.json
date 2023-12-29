@@ -8,7 +8,12 @@
             "version": "1.0.0"
         },
         "title": "{{appTitle}}",
-        "description": "{{appDescription}}"
+        "description": "{{appDescription}}",
+        "sourceTemplate": {
+            "id": "@sap/ux-app-migrator:freestyle",
+            "version": "1.12.1",
+            "toolsId": "940e1875-98fb-4031-98f4-3ecfc3558bcf"
+        }
     },
     "sap.ui": {
         "technology": "UI5",
