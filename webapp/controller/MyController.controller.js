@@ -16,8 +16,13 @@ sap.ui.define([
                     {"id": "*", "value": "multiply"}
                 ]
             };
-            var oModel = new JSONModel(oData);
+            // var oModel = new JSONModel();
+            var oModel = this.getOwnerComponent().getModel();
+            
+            oModel.setData(oData);
+
             this.getView().setModel(oModel);
+            this.getView().setModel
         },
         calculate: function () {
             const input1 = this.getView().getModel().getData().field1;

@@ -5,20 +5,17 @@ sap.ui.define([
     "use strict";
     return UIComponent.extend("MyApp.Component", {
         metadata : {
-            rootView: {
-                viewName: "MyApp.view.MyView",
-                type: "XML"
-            }
+            manifest: "json"
         },
-        init: function () {
-            // call the base component's init function
-            UIComponent.prototype.init.apply(this, arguments);
+        // init: function () {
+        //     // call the base component's init function. In ABAP we have this.super()
+        //     UIComponent.prototype.init.apply(this, arguments);
 
-            // create and set the i18n model
-            var i18nModel = new ResourceModel({
-                bundleName: "MyApp.i18n.i18n"
-            });
-            this.setModel(i18nModel, "i18n");
-        }        
+        //     // create and set the i18n model
+        //     var i18nModel = new ResourceModel({
+        //         bundleName: "MyApp.i18n.i18n"
+        //     });
+        //     this.setModel(i18nModel, "i18n");
+        // }        
     });
 });

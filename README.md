@@ -1,5 +1,8 @@
 # ui5-training
 
-### Resource Binding
-### One-Time binding
-### Create i18n model
+### Create Application Descriptor
+### Update Component.js to point to manifest
+### Remove i18n model from Component.js
+### Remove JSON model declaration from controller
+### Specify i18n, JSON model in manifest
+### Specify rootView in manifest
