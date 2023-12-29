@@ -6,7 +6,7 @@
 			<f:content>
 				<Label text="{i18n>firstValue}" />
 				<Input id="value1" value="{/field1}" />
-				<Label text="Value 2" />
+				<Label text="{i18n>secondValue}" />
 				<Input id="value2" value="{/field2}" />
 				<Label text="Operator" />
 				<Select selectedKey="{/operator}" items="{/possibleOperations}" >
@@ -14,10 +14,10 @@
 						<core:Item key="{id}" text="{value}"/>
 					</items>
 				</Select>				
-				<Label text="Output" />
+				<Label text="{i18n>answer}" />
 				<Text text="{/output}"/>
 			</f:content>
 		</f:SimpleForm>
-        <Button text="Calculate" press=".calculate"/>		
+        <Button text="{i18n>calculate}" press=".calculate"/>		
     </VBox>
 </mvc:View>
